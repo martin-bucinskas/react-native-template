@@ -7,8 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint .",
-    "precommit": "lint-staged"
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "16.11.0",
@@ -32,15 +31,15 @@
     "jest": "^25.2.7",
     "lint-staged": "^10.1.2",
     "metro-react-native-babel-preset": "^0.59.0",
+    "pretty-quick": "^2.0.1",
     "react-test-renderer": "16.11.0"
   },
   "jest": {
     "preset": "react-native"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
